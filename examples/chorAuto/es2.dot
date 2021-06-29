@@ -1,0 +1,7 @@
+digraph c2 {
+    s0 [label="" height=0 width=0]
+    s0 -> 0
+    0 -> 1 [label="D->B:l"]
+    1 -> 2 [label="B->E:l"]
+    0 -> 3 [label="D->B:r"]
+}
