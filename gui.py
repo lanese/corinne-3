@@ -88,7 +88,7 @@ class MyGui(ttk.Frame):
                                       " - Projection: given a CA, you can select one participant from it and get the relative CFSM",justify=tk.LEFT,padx=15,pady=15).pack()
 
     def v_initUi(self, master):
-        self.master.title("Corinne 2.0")
+        self.master.title("Corinne 3.0")
         self.master.grid_columnconfigure(0, weight=1)
         self.master.grid_rowconfigure(2, weight=1)
         self.master.option_add('*foreground', 'black')
