@@ -486,8 +486,8 @@ class MyGui(ttk.Frame):
         self.controller.render(v_path,'png',False)
         new_path = v_path + ".png"
         image = Image.open(new_path)
-        scale = min(min((self._screen_width/2)/image.width,(self._screen_height-50)/image.height),1)
-        image = image.resize((image.width*scale,image.height*scale), Image.ANTIALIAS)
+        scale = min(min((self._screen_width/2)/image.width,(self._screen_height-250)/image.height),1)
+        image = image.resize((int(image.width*scale),int(image.height*scale)), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(image)
         labelprova = tk.Label(frame,image=img)
         labelprova.photo=img
