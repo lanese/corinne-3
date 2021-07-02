@@ -34,10 +34,11 @@ def get_interaction_string(ctx: DOTParser.InteractionContext):
     # make the label
     label = str(ctx.Uppercase_letter(0)) + '->' + \
             str(ctx.Uppercase_letter(1)) + ':'
-    message = ""
-    for i in ctx.Lowercase_letter():
-        message += str(i)
+    message = get_string_from_tokens(ctx.string())
+#    for i in ctx.Lowercase_letter():
+#        message += str(i)
     label += message
+    print(label)
     
     return (str(ctx.Uppercase_letter(0)), str(ctx.Uppercase_letter(1)),
             message, label)
