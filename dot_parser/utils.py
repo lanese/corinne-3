@@ -38,7 +38,6 @@ def get_interaction_string(ctx: DOTParser.InteractionContext):
 #    for i in ctx.Lowercase_letter():
 #        message += str(i)
     label += message
-    print(label)
     
     return (str(ctx.Uppercase_letter(0)), str(ctx.Uppercase_letter(1)),
             message, label)

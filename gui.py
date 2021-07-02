@@ -107,7 +107,7 @@ class MyGui(ttk.Frame):
         self._screen_width, self._screen_height = master.winfo_screenwidth(), master.winfo_screenheight()
         start_x = int((self._screen_width / 4))
         start_y = int((self._screen_height / 4))
-        # fit the guy at screen resolution
+        # fit the gui at screen resolution
         master.geometry('%dx%d+%d+%d' % (self._screen_width / 2, self._screen_height / 2, start_x, start_y))
 
         #self.v_splashscreen(master,start_x,start_y)
@@ -486,7 +486,8 @@ class MyGui(ttk.Frame):
         self.controller.render(v_path,'png',False)
         new_path = v_path + ".png"
         image = Image.open(new_path)
-        image = image.resize((150,200), Image.ANTIALIAS)
+        scale = min(min((self._screen_width/2)/image.width,(self._screen_height-50)/image.height),1)
+        image = image.resize((image.width*scale,image.height*scale), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(image)
         labelprova = tk.Label(frame,image=img)
         labelprova.photo=img
