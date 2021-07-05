@@ -8,7 +8,7 @@ The following prerequisites should be fulfilled:
 - python3-pip
 - antlr4
 
-Corinne relies on, antlr4, the DOT format, and python's Thinter (for its GUI);
+Corinne relies on, antlr4, the DOT format, and python's Tkinter (for its GUI);
 therefore the following packages are required:
 
 - install python3-tk
