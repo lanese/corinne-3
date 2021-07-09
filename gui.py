@@ -1,3 +1,4 @@
+import sys
 import os
 import tkinter as tk
 from tkinter import ttk
@@ -186,20 +187,21 @@ class MyGui(ttk.Frame):
         # Check in case user enter an unknown file
         # or closes without choosing a file.
         try:
-            path_splitted = os.path.split(path)
-            ext = path_splitted[1].split('.')
+            #path_splitted = os.path.split(path)
+            #ext = path_splitted[1].split('.')
+            ext = os.path.splitext(path)
             # Chorgram file
-            if ext[1] == 'txt':
+            if ext[1] == '.txt':
                 msg_result = self.__open_chorgram_file(path)
             # DOT files
-            elif ext[1] == 'dot' or ext[1] == 'gv':
+            elif ext[1] == '.dot' or ext[1] == '.gv':
                 msg_result = self.__open_dot_file__(path)
             else:
-                self.popupmsg("Unknown extension file")
+                self.popupmsg("Unknown extension file: "+ext)
             # update log box
             self.log(msg_result)
         except:
-            pass
+            print("Unexpected error:", sys.exc_info())
 
     def __open_chorgram_file(self, path):
         path_splitted = os.path.split(path)

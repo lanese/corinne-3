@@ -88,7 +88,7 @@ class Controller:
             return e.message[0] + " " + e.message[1]  # return eventually an error message
         else:
             #V voglio mettere che lo apre se glielo dico io,altirmenti mi rendera quello
-            #che volgio    
+            #che voglio    
             save_path = render('dot', extension, path_file)
 
             if V_rend_on_default_image_viewer == True:
