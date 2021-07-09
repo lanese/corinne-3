@@ -190,7 +190,7 @@ def well_branchedness_first_condition(edges, states):
 
     return None
 
-# Well-branchedness secondd condition:
+# Well-branchedness second condition:
 # Check for each edge where a state is not a sender in each transition if this two edges
 # are concurrent
 
@@ -348,11 +348,11 @@ def well_branchedness_third_condition(states, edges, participants):
         result = check_validity(passed[it][0], passed[it][1], edges, participants)
 
         if not (result == None):
-            return str((passed[it][0],passed[it][1], "B = ", result))
+            return str((passed[it][0],passed[it][1], "due to participant " + result))
 
     return None
 
-# Check edge by edge if the graph respects the first condition, if it doesn't respet it check if at that point
+# Check edge by edge if the graph respects the first condition, if it doesn't respect it check if at that point
 # at least the second condition holds
 
 def well_sequencedness_conditions(ca):

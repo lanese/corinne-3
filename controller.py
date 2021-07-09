@@ -274,21 +274,21 @@ class Controller:
         res1 = well_branchedness_first_condition(ca.edges,ca.states)
         
         if res1 != None:
-            result = ['Verified: NO Well-branched in first condition: ' + res1]
+            result = ['Verified: NO. Well-branchedness fails in first condition: ' + res1]
             return [result]
 
         # Second error check
         res2 = well_branchedness_second_condition(ca.edges,ca.states,ca.participants)
 
         if res2 != None:
-            result = ['Verified: NO Well-branched in second condition ' + res2]
+            result = ['Verified: NO. Well-branchedness fails in second condition: ' + res2]
             return [result]
 
         # Third error check
         res3 = well_branchedness_third_condition(ca.states,ca.edges,ca.participants)
 
         if res3 != None:
-            result = ['Verified: NO Well-branched in third condition ' + res3]
+            result = ['Verified: NO. Well-branchedness fails in third condition: ' + res3]
             return [result]
 
         else:
