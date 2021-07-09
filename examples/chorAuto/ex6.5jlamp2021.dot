@@ -1,0 +1,16 @@
+digraph alternator {
+    s0 [label="" height=0 width=0]
+    s0 -> 0
+    0 -> 1 [label="K->R:text"]
+    1 -> 2 [label="R->K:ack"]
+    2 -> 5 [label="R->S:go"]
+    1 -> 3 [label="R->K:nack"]
+    3 -> 4 [label="R->S:wait"]
+    4 -> 1 [label="K->R:transf"]
+    5 -> 6 [label="K->S:text"]
+    6 -> 7 [label="S->K:ack"]
+    7 -> 0 [label="S->R:go"]
+    6 -> 8 [label="S->K:nack"]
+    8 -> 9 [label="S->R:wait"]
+    9 -> 6 [label="K->S:transf"]
+}

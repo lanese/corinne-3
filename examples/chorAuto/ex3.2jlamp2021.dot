@@ -1,0 +1,13 @@
+digraph langProp {
+    s0 [label="" height=0 width=0]
+    s0 -> 0
+    0 -> 1 [label="P->Q:text"]
+    1 -> 2 [label="Q->H:text"]
+    2 -> 3 [label="H->Q:ack"]
+    3 -> 0 [label="Q->P:ok"]
+    2 -> 4 [label="H->Q:nack"]
+    4 -> 5 [label="Q->P:notyet"]
+    5 -> 2 [label="Q->H:transf"]
+    2 -> 6 [label="H->Q:stop"]
+    6 -> 7 [label="Q->P:stop"]    
+}
