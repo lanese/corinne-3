@@ -16,6 +16,7 @@ class MyGui(ttk.Frame):
     _screen_height = None
     COLOR_buttons = '#FFCB6B'
     COLOR_frames = '#333333'
+    COLOR_tabs = '#666666'
     COLOR_foreground = '#D9C7B3'
     COLOR_log = '#1E1E1E'
 
@@ -97,7 +98,7 @@ class MyGui(ttk.Frame):
         # Style for ttk widgets
         style = ttk.Style()
         style.configure("TNotebook", background=self.COLOR_frames, borderwidth=1, highlightthickness=1)
-        style.configure("TNotebook.Tab", background=self.COLOR_frames, foreground="black",
+        style.configure("TNotebook.Tab", background=self.COLOR_tabs, foreground="black",
                              lightcolor=self.COLOR_frames, borderwidth=0)
         style.map("TNotebook.Tab", background=[("selected", self.COLOR_buttons)],
                        foreground=[("selected", 'black')])
