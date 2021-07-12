@@ -97,7 +97,7 @@ def sublist(a, b):
 
     return False
 
-# Check whatever a pair of runs  is cofinal, with no commons node but the first and the last one
+# Check whether a pair of runs is cofinal, with no common node but the first and the last one
 
 def first_qspan_condition(sigma1, sigma2):
 
@@ -116,7 +116,7 @@ def first_qspan_condition(sigma1, sigma2):
             return True
     return False
 
-# Check whatever a pair of runs is two candidate
+# Check whether a pair of runs is two candidate
 # q-branches with no common node but the first
 
 def second_qspan_condition(sigma1, sigma2, candidates):
@@ -133,7 +133,7 @@ def second_qspan_condition(sigma1, sigma2, candidates):
         return False
     return False
 
-# Check whatever a pair is formed by a candidate
+# Check whether a pair is formed by a candidate
 # q-branch and a loop on q with no other common 
 # nodes 
 
@@ -227,7 +227,7 @@ def get_first(participant, edges):
                 return run
     return None
 
-# Given a partecipant and two sets of transition 
+# Given a partecipant and two sets of transitions 
 # it returns the first not different label where
 # the partecipant appears
 def get_first_label(participant, edges1, edges2):
@@ -250,7 +250,7 @@ def get_first_label(participant, edges1, edges2):
 
 
 # Simply check the "form" of the couple in the last part of the
-# third Well-Brandhedness condition
+# third Well-Branchedness condition
 
 def check_form(edge1, edge2, B):
 
@@ -357,7 +357,7 @@ def well_branchedness_third_condition(states, edges, participants):
 
 def well_sequencedness_conditions(ca):
 
-    #first condition check for every coupple of transitions
+    #first condition check for every couple of transitions
     for i in ca.edges:
         for j in ca.edges:
             if i[2] == j[0]:
@@ -367,7 +367,7 @@ def well_sequencedness_conditions(ca):
                     for k in ca.edges:
                         if i[2] != k[2] and k[0] == i[0]:
                             for h in ca.edges:
-                                if h[0] == k[2] and h[2] == j[0]:
+                                if h[0] == k[2] and h[2] == j[2]:
                                     if  i[1] == h[1] and j[1] == k[1]:
                                         return None
                             return (str(i[0]+"  |"+str(i[1])+"|  "+str(i[2])+"  |"+str(j[1])+"|  "+str(j[2])))
