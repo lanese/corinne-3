@@ -1,0 +1,13 @@
+digraph notCUI {
+    s0 [label="" height=0 width=0]
+    s0 -> 0
+    0 -> 1 [label="A->B:m"]
+    1 -> 2 [label="D->C:m1"]
+    1 -> 3 [label="D->C:m2"]
+    2 -> 0 [label="C->A:m1"]
+    3 -> 0 [label="C->B:m2"]
+    0 -> 4 [label="D->C:m1"]
+    4 -> 2 [label="A->B:m"]
+    0 -> 5 [label="D->C:m2"]
+    5 -> 3 [label="A->B:m"]        
+}
