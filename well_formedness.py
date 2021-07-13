@@ -3,7 +3,7 @@ import os, itertools
 #TODO inserire introduzione
 
 
-# Check wathever a run has cycle
+# Check whether a run has cycle
 # with at most one occurrence
 
 def check_q_branch(array):
@@ -15,6 +15,7 @@ def check_q_branch(array):
         return True
 
 # DFS given a set of transitions
+# returns the result in runs
 
 def search(i, arr, insieme1, runs):
 
