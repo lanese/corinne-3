@@ -357,20 +357,23 @@ def well_branchedness_third_condition(states, edges, participants):
 # at least the second condition holds
 
 def well_sequencedness_conditions(ca):
-
+    res = None
     #first condition check for every couple of transitions
     for i in ca.edges:
         for j in ca.edges:
             if i[2] == j[0]:
                 if j[3] != i[3] and j[4] != i[4] and j[4] != i[3] and i[4] != j[3]:
-
-                    #second condition check
-                    for k in ca.edges:
-                        if i[2] != k[2] and k[0] == i[0]:
-                            for h in ca.edges:
-                                if h[0] == k[2] and h[2] == j[2]:
-                                    if  i[1] == h[1] and j[1] == k[1]:
-                                        return None
-                            return (str(i[0]+"  |"+str(i[1])+"|  "+str(i[2])+"  |"+str(j[1])+"|  "+str(j[2])))
-                    return (str(i[0]+"  |"+str(i[1])+"|  "+str(i[2])+"  |"+str(j[1])+"|  "+str(j[2])))
+                        res = well_sequencedness_second_condition(ca,i,j)
+                        if res != None:
+                                return res
     return None
+
+def well_sequencedness_second_condition(ca,i,j):
+        #second condition check
+        for k in ca.edges:
+                if i[2] != k[2] and k[0] == i[0] and j[1] == k[1]: #first transition found
+                        for h in ca.edges:
+                                if h[0] == k[2] and h[2] == j[2] and i[1] == h[1]: #second transition found 
+                                        return None
+        return (str(i[0]+"  |"+str(i[1])+"|  "+str(i[2])+"  |"+str(j[1])+"|  "+str(j[2])))
+ 
