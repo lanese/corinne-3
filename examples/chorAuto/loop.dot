@@ -1,0 +1,10 @@
+digraph loop {
+    s0 [label="" height=0 width=0]
+    s0 -> 0
+    0 -> 1 [label="C->D:n1"]
+    1 -> 2 [label="C->D:n2"]
+    2 -> 0 [label="A->B:n3"]
+    0 -> 4 [label="B->C:m1"]
+    1 -> 4 [label="B->C:m2"]
+    2 -> 4 [label="B->C:m3"]
+}
