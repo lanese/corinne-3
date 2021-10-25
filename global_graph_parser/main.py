@@ -18,7 +18,7 @@ def main(path_file, path_store):
     """
     graph_name = __extract_name__(path_file)
 
-    path_store = os.path.join(path_store, graph_name + '.gv')
+    path_store = os.path.join(path_store, graph_name + '.dot')
 
     input_stream = FileStream(path_file)
 

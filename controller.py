@@ -106,10 +106,10 @@ class Controller:
         # check if the participants are disjoint,
         if ca1.participants.intersection(ca2.participants):
             return ["[ERROR] participants are not disjoint"]
-        # if the user didn't add a .gv extension to the name of
+        # if the user didn't add a .dot extension to the name of
         # product graph, we'll add it
-        if not path_to_store.endswith('.gv'):
-            path_to_store += '.gv'
+        if not path_to_store.endswith('.dot'):
+            path_to_store += '.dot'
         # get the name from the path
         path_splitted = os.path.split(path_to_store)
         graph_name = path_splitted[1].split('.')
@@ -156,10 +156,10 @@ class Controller:
         # check if interfaces aren't the same
         if interface1 == interface2:
             return ["[ERROR] you selected the same participant for both interfaces"]
-        # if the user didn't add a .gv extension to the name of
+        # if the user didn't add a .dot extension to the name of
         # sync graph, we'll add it
-        if not path_to_store.endswith('.gv'):
-            path_to_store += '.gv'
+        if not path_to_store.endswith('.dot'):
+            path_to_store += '.dot'
         # get the name from the path
         path_splitted = os.path.split(path_to_store)
         graph_name = path_splitted[1].split('.')
@@ -223,10 +223,10 @@ class Controller:
         """
         # get the choreography automaton from graph name
         ca = self.ca_dict.get(graph_name)
-        # if the user didn't add a .gv extension to the name of
+        # if the user didn't add a .dot extension to the name of
         # sync graph, we'll add it
-        if not path_to_store.endswith('.gv'):
-            path_to_store += '.gv'
+        if not path_to_store.endswith('.dot'):
+            path_to_store += '.dot'
         # get the name from the path
         path_splitted = os.path.split(path_to_store)
         graph_name = path_splitted[1].split('.')
