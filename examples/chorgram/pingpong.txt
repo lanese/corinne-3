@@ -1,0 +1,5 @@
+P -> Q : finished
++
+{ *{
+   P -> Q : ping ; P -> Q : pong
+} @ P } ; P-> Q : finished
