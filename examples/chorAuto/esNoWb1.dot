@@ -1,0 +1,10 @@
+digraph noWb1 {
+    s0 [label="" height=0 width=0]
+    s0 -> 0
+    0 -> 1 [label="A->B:l"]
+    1 -> 2 [label="B->C:n"]
+    2 -> 3 [label="C->D:l"]
+    0 -> 4 [label="A->B:r"]
+    4 -> 5 [label="B->C:n"]
+    5 -> 6 [label="C->D:r"]
+}
